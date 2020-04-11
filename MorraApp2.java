@@ -18,9 +18,11 @@ public class MorraApp2{
 	int scorep=0;
 	int scorecom=0;
 	int i=0;   //The counter that determines how many games to be played
+	// String playAgain;
 
 	//Create Object
 	MorraT M= new MorraT();
+	MorraT myMorraT= new MorraT();
 
 
 		while(i<1){
@@ -30,7 +32,9 @@ public class MorraApp2{
 			i++;
 		} //close while loop
 
+
 	M.displayFullHistory();
+
 
 
 

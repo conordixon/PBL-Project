@@ -25,6 +25,8 @@ public class MorraT{
 	private String winner;  //display who the winner is ??
 	public int count=0;    //count the total iterations
 	private int ocount;	   //count the iterations for each object
+	private boolean input;
+	// private String playAgain;
 	List<MorraT> Marray=new ArrayList<>();   //The array list for storing objects
 
 	//Arrays to store History
@@ -36,6 +38,7 @@ public class MorraT{
 	List<Integer> ScoreCom =new ArrayList<>();
 	List<String> WinnerArr =new ArrayList<>();
 
+	MorraApp2 myMorraApp2=new MorraApp2();
 
 	//default constructor
 	public MorraT(){
@@ -47,6 +50,7 @@ public class MorraT{
 		strchoice="";
 		scorep=0;
 		scorecom=0;
+		// playAgain="";
 
 	 }
 
@@ -70,6 +74,9 @@ public class MorraT{
 		this.choice= choice;
 	}
 
+	// public void playAgain(String playAgain){
+	// 	this.playAgain=playAgain;
+	// }	
 	 //get player score
     public int getScoreP(){
 			return scorep;
@@ -109,50 +116,48 @@ public class MorraT{
 			return ocount;
 	}
 
+	public boolean getInput(){
+		return input;
+	}
+
  //get the players Choice odd or even
 	public String getStrChoice(){
-				if((choice%2)==1)
-				{
+				if((choice%2)==1){
 				  this.strchoice= "ODD";
 				}
-
-				else
-				{ this.strchoice = "EVEN"; }
-			return strchoice;
-  		  }
-
+				else{
+					this.strchoice = "EVEN";
+				}
+				return strchoice;
+	}
 
 //Determine if the result is odd or even
 	public String getstrResult(){
-
 		  result =(rand+play)%2;
-
 		  if(result==0)
 			{strresult="EVEN";}
-		  else
-		    {strresult="ODD";}
-
+		  else{
+		    strresult="ODD";
+		}
 		 return strresult;
-    }
-
+}
 	public String determineWinner(){
 
 		 if( (scorep>=12) && (scorecom<12))
 		 	{winner= "PLAYER";}
 		 else if( (scorep<12) && (scorecom>=12))
-		 	{ winner= "COM";}
+		 	{ winner= "COMPUTER";}
 		 else
 		 	{ winner="BOTH";}
 		 return winner;
 	 }
 
 	public void generateInputs(){
-
-			this.play =   Integer.parseInt(JOptionPane.showInputDialog(null, "Choose a number" ));
-			this.choice = Integer.parseInt(JOptionPane.showInputDialog(null, "Choose 1 for odd or 0 for even" )); //can also take string input, and convert even(case ignore) or odd
-
-			this.setRand();
-
+			try{
+				play=Integer.parseInt(JOptionPane.showInputDialog(null, "Choose a number between 1 and 10"));
+				 if(play>=1 && play<=10){
+					this.setRand();
+			choice=Integer.parseInt(JOptionPane.showInputDialog(null, "Choose 1 for odd or 0 for even" ));
 			System.out.println("You have chosen "+(  this.getPlay() )+" fingers");
 			System.out.println("You have chosen "+(  this.getStrChoice())+" outcome");
 
@@ -164,8 +169,20 @@ public class MorraT{
 			System.out.println("Computer has chosen "+(this.getRand())+" fingers");
 			//Display using JOption Pane
 			//JOptionPane.showMessageDialog(null,"Computer has chosen "+(( Marray.get(i)).getRand())+" fingers");
-
+			}
+			else{
+				JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.");
+				generateInputs();
+		}
 	}
+	catch(NumberFormatException e){//catches strings when it should be an int input
+					JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.");
+					generateInputs();
+		}				
+}
+
+
+
 
 	public void calculateMainScore(){
 
@@ -279,7 +296,7 @@ public class MorraT{
 				  (Marray.get(i)).calculateMainScore();
 				  (Marray.get(i)).calculateBonusScore();
 
-				  System.out.println( "The player score for round " +(i+1)+ " is: "+( (Marray.get(i)).getScoreP() )+" Total Com Score: "+( Marray.get(i) ).getScoreCom() );
+				  System.out.println( "The player score for round " +(i+1)+ " is: "+( (Marray.get(i)).getScoreP() )+" Total Computer Score: "+( Marray.get(i) ).getScoreCom() );
 				  //JOptionPane.showMessageDialog(null,"You have chosen );
 
 
@@ -303,27 +320,11 @@ public class MorraT{
 				  //This loops iterates as long as the score for player and computer is less than 12
 				  while   ( ( (Marray.get(i) ).getScoreP()<12) & ( ( Marray.get(i) ).getScoreCom()<12));
 
-				  System.out.println( "The winner for this round is "+( Marray.get(i) ).determineWinner());
+				  System.out.println( "The winner of this game is "+( Marray.get(i) ).determineWinner());
+				  JOptionPane.showMessageDialog(null, "The winner of the game is " +( Marray.get(i) ).determineWinner());
 				  WinnerArr.add( Marray.get(i).getWinner());
+ 
+			}	
 
-				 }     //close session statement
+}				
 
-
-
-
-
-
-}
-
-/*   game
-  <----->
-  |7,7,9|9,8,5|5,3,6|
-
-       3|    6|    9|
-  <---------------->
-        count
-
-  <----><-----><---->
-  ocount ocount ocount
-
-*/

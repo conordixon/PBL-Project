@@ -5,6 +5,8 @@ Abubakr Bhutta 21/03/20 */
 import javax.swing.*;
 import java.util.*;
 import java.lang.Math.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MorraApp2{
 
@@ -15,23 +17,23 @@ public class MorraApp2{
 	int choice=0;
 	int scorep=0;
 	int scorecom=0;
-	int i=0;
+	int i=0;   //The counter that determines how many games to be played
 
 	//Create Object
-	Morra M= new Morra();
+	MorraT M= new MorraT();
+
 
 		while(i<1){
-			//display choice
+
 			M.session(i);
 
 			i++;
 		} //close while loop
 
-	M.displayHistory();
+	M.displayFullHistory();
 
 
 
 	}
 
 }
-

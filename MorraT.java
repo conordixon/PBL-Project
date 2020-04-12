@@ -154,7 +154,7 @@ public class MorraT{
 
 	public void generateInputs(){
 			try{
-				play=Integer.parseInt(JOptionPane.showInputDialog(null, "Choose a number between 1 and 10"));
+				play=Integer.parseInt(JOptionPane.showInputDialog(null, "Enter a number between 1 and 10"));
 				 if(play>=1 && play<=10){
 					this.setRand();
 			choice=Integer.parseInt(JOptionPane.showInputDialog(null, "Choose 1 for odd or 0 for even" ));

@@ -135,7 +135,7 @@ public class MorraGameGroup{
 		    strResult="ODD";
 		}
 		 return strResult;
-}
+	}
 
 //determine the winner of the game
 	public String determineWinner(){
@@ -287,7 +287,7 @@ public class MorraGameGroup{
 			computerScoreArr.add(Marray.get(i).getComputerScore());
 			//winnerArr.add( Marray.get(i).getWinner());
 
-			} //close do while loop
+		} //close do while loop
 
 			//This loops iterates as long as the score for player and computer is less than 12
 		while (((Marray.get(i)).getPlayerScore()<12) & ((Marray.get(i)).getComputerScore()<12));

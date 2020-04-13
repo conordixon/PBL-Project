@@ -24,7 +24,7 @@ public class MorraGameGroup{
 	private String strChoice;//what is the result of the choice
 	private int playerScore;    //player score counter
 	private int computerScore;	//computer score counter
-	private String winner;  //display who the winner is ??
+	private String winner;  //display who the winner is
 	public int count=0;    //count the total iterations
 	private int ocount;	   //count the iterations for each object
 
@@ -193,12 +193,12 @@ public class MorraGameGroup{
 
 	public void calculateBonusScore(){
 		//calculate bonus score
-		if(playerNo > randomNo)  //player is closer to the sum  1,2,3,4,5,6,7,8,9,10   {11,12,13,14,15,16,17,18,19,20}
-		{
-		playerScore=playerScore+2;}
-		else if(randomNo>playerNo)  //computer is closer to these sum
-		{
-		computerScore=computerScore+2;
+		if(playerNo > randomNo){  //player is closer to the sum  1,2,3,4,5,6,7,8,9,10   {11,12,13,14,15,16,17,18,19,20}
+
+		playerScore=playerScore+2;
+		}
+		else if(randomNo>playerNo){  //computer is closer to these sum
+				computerScore=computerScore+2;
 		}
 		else if (randomNo == playerNo)  // in the case that player or computer number is the same i.e. equals cases
 		{
@@ -219,29 +219,29 @@ public class MorraGameGroup{
 
 			System.out.println("Player Number: ");
 
-		for(int k=count-(Marray.get(j).getCount());k<( Marray.get(j).getCount());k++){
+		for(int k=count-(Marray.get(j).getCount());k<(Marray.get(j).getCount());k++){
 			System.out.println(playerChoiceArr.get(k));
 			}
 			System.out.println("Computer Number: ");
 
-		for(int k1=count-(Marray.get(j).getCount());k1<( Marray.get(j).getCount());k1++){
+		for(int k1=count-(Marray.get(j).getCount());k1<(Marray.get(j).getCount());k1++){
 			System.out.println( computerChoiceArr.get(k1));
 			}
 			System.out.println("Player ODD/EVEN Choice: ");
-		for(int k6=count-(Marray.get(j).getCount());k6<( Marray.get(j).getCount());k6++){
+		for(int k6=count-(Marray.get(j).getCount());k6<(Marray.get(j).getCount());k6++){
 			System.out.println( strPlayerChoiceArr.get(k6));
 			}
 			System.out.println("ODD/EVEN Result: ");
-		for(int k2=count-(Marray.get(j).getCount());k2<( Marray.get(j).getCount());k2++){
+		for(int k2=count-(Marray.get(j).getCount());k2<(Marray.get(j).getCount());k2++){
 			System.out.println( arrayResult.get(k2));
 			}
 			System.out.println("PlayerScore: ");
-		for(int k3=count-(Marray.get(j).getCount());k3<( Marray.get(j).getCount());k3++){
+		for(int k3=count-(Marray.get(j).getCount());k3<(Marray.get(j).getCount());k3++){
 			System.out.println( playerScoreArr.get(k3) );
 			}
 			System.out.println("Computer Score: ");
-		for(int k4=count-(Marray.get(j).getCount());k4<( Marray.get(j).getCount());k4++){
-			System.out.println( computerScoreArr.get(k4) );
+		for(int k4=count-(Marray.get(j).getCount());k4<(Marray.get(j).getCount());k4++){
+			System.out.println( computerScoreArr.get(k4));
 			}
 			System.out.println("Winner: ");
 		for(int k5=0;k5<winnerArr.size();k5++){
@@ -293,6 +293,8 @@ public class MorraGameGroup{
 
 			System.out.println( "The winner of this game is "+(Marray.get(i)).determineWinner());
 			JOptionPane.showMessageDialog(null, "The winner of the game is " +(Marray.get(i)).determineWinner());
+			ImageIcon winner=new ImageIcon("winner.png");
+			JOptionPane.showMessageDialog(null, "The winner of the game is the " +( Marray.get(i) ).determineWinner(),"Display Image", JOptionPane.INFORMATION_MESSAGE,winner);
 			winnerArr.add(Marray.get(i).getWinner());
             System.out.println();//empty line for better appearance
 		}

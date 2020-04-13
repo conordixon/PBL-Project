@@ -27,7 +27,6 @@ public class MorraGameGroupApp{
 
 	//Create Object
 	MorraGameGroup M= new MorraGameGroup();
-	MorraGameGroup myMorraT= new MorraGameGroup();
 
 
 		while(i<10){

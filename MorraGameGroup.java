@@ -116,17 +116,17 @@ public class MorraGameGroup{
  //get the players choice odd or even
 	public String getChoiceStr(){
 		if((choiceEvenOrOdd%2)==1){
-			this.strChoice= "ODD";
+			this.strChoice="ODD";
 			}
 			else{
-				this.strChoice = "EVEN";
+				this.strChoice="EVEN";
 			}
 			return strChoice;
 	}
 
 //Determine if the result is odd or even
 	public String getResultStr(){
-		result =(randomNo+playerNo)%2;
+		result=(randomNo+playerNo)%2;
 		if(result==0){
 			strResult="EVEN";
 		}
@@ -145,7 +145,7 @@ public class MorraGameGroup{
 			winner= "COMPUTER";
 		}
 		else{ 
-			winner="BOTH";}
+			winner="GAME IS A DRAW";}
 		return winner;
 	 }
 
@@ -292,7 +292,7 @@ public class MorraGameGroup{
 			System.out.println( "The winner of this game is "+(Marray.get(i)).determineWinner());
 			// JOptionPane.showMessageDialog(null, "The winner of the game is " +(Marray.get(i)).determineWinner());
 			ImageIcon winner=new ImageIcon("winner.png");
-			JOptionPane.showMessageDialog(null, "The winner of the game is the " +( Marray.get(i) ).determineWinner(),"Display Image", JOptionPane.INFORMATION_MESSAGE,winner);
+			JOptionPane.showMessageDialog(null, "The winner of the game is the " +( Marray.get(i)).determineWinner(),"Display Image", JOptionPane.INFORMATION_MESSAGE,winner);
 			winnerArr.add(Marray.get(i).getWinner());
             System.out.println();//empty line for better appearance
 		}

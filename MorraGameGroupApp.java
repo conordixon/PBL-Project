@@ -30,7 +30,7 @@ public class MorraGameGroupApp{
 	MorraGameGroup myMorraT= new MorraGameGroup();
 
 
-		while(i<3){
+		while(i<10){
 			M.session(i);
 			M.displayFullHistory();      
 			playAgain=JOptionPane.showInputDialog(null,"This is the end of the game. Would you like to play the game again?");

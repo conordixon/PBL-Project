@@ -163,13 +163,15 @@ public class MorraGameGroup{
 			System.out.println("Computer has chosen "+(this.getRandomNo())+" fingers");
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.");
+				ImageIcon attention=new ImageIcon("attention.png");
+				JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.", "Display Image", JOptionPane.INFORMATION_MESSAGE,attention);
 				generateInputs();
 		}
 	}
 	catch(NumberFormatException e){//catches strings when it should be an int input
-					JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.");
-					generateInputs();
+			ImageIcon turnback=new ImageIcon("turnback.png");
+			JOptionPane.showMessageDialog(null, "You must enter a number, please try again!", "Display Image",JOptionPane.INFORMATION_MESSAGE,turnback);
+			generateInputs();
 		}
 }
 
@@ -292,7 +294,7 @@ public class MorraGameGroup{
 		while (((Marray.get(i)).getPlayerScore()<12) & ((Marray.get(i)).getComputerScore()<12));
 
 			System.out.println( "The winner of this game is "+(Marray.get(i)).determineWinner());
-			JOptionPane.showMessageDialog(null, "The winner of the game is " +(Marray.get(i)).determineWinner());
+			// JOptionPane.showMessageDialog(null, "The winner of the game is " +(Marray.get(i)).determineWinner());
 			ImageIcon winner=new ImageIcon("winner.png");
 			JOptionPane.showMessageDialog(null, "The winner of the game is the " +( Marray.get(i) ).determineWinner(),"Display Image", JOptionPane.INFORMATION_MESSAGE,winner);
 			winnerArr.add(Marray.get(i).getWinner());

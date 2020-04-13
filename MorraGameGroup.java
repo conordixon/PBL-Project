@@ -175,7 +175,6 @@ public class MorraGameGroup{
 		}
 }
 
-
 //calculate the main score
 	public void calculateMainScore(){
 		if(this.choiceEvenOrOdd != this.result){
@@ -191,7 +190,6 @@ public class MorraGameGroup{
 		}
 
 	}
-
 
 	public void calculateBonusScore(){
 		//calculate bonus score
@@ -252,13 +250,11 @@ public class MorraGameGroup{
 
 			System.out.println("%%%%%%%%%%%%%%%%");
 		}
-
-
 	}
 
 	public void session(int i) {
-				  //Creates an object for each game
-		Marray.add(i,new MorraGameGroup());
+			//Creates an object for each game
+			Marray.add(i,new MorraGameGroup());
 
 		do{
 			//Function that asks user for number and choice and sets the computer number

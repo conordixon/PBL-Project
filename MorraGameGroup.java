@@ -32,12 +32,12 @@ public class MorraGameGroup{
 
 	//Arrays to store History
 	List<Integer> playerChoiceArr = new ArrayList<>();
-	List<Integer> computerChoiceArr =new ArrayList<>();
-	List<String>  strPlayerChoiceArr= new ArrayList<>();
-	List<String> arrayResult =new ArrayList<>();
-	List<Integer> playerScoreArr   =new ArrayList<>();
-	List<Integer> computerScoreArr =new ArrayList<>();
-	List<String> winnerArr =new ArrayList<>();
+	List<Integer> computerChoiceArr = new ArrayList<>();
+	List<String>  strPlayerChoiceArr = new ArrayList<>();
+	List<String> arrayResult = new ArrayList<>();
+	List<Integer> playerScoreArr = new ArrayList<>();
+	List<Integer> computerScoreArr = new ArrayList<>();
+	List<String> winnerArr = new ArrayList<>();
 
 
 	//default constructor

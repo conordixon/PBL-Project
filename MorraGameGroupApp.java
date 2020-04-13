@@ -4,7 +4,7 @@ MorraGameGroupApp.java
 @Conor Dixon
 @Jeanne Hurlay
 @Blerta Tzafai
-
+13 04 2020
 */
 
 import javax.swing.*;
@@ -24,37 +24,28 @@ public class MorraGameGroupApp{
 	int scorecom=0;
 	String playAgain="";
 	int i=0;   //The counter that determines how many games to be played
-	// String playAgain;
 
 	//Create Object
 	MorraGameGroup M= new MorraGameGroup();
 	MorraGameGroup myMorraT= new MorraGameGroup();
 
 
-		while(i<10){
+		while(i<2){
 
 			M.session(i);
              i++;
-			playAgain= JOptionPane.showInputDialog(null," END of this Round !!!! Would you like to Play again ?");
-
-			             if(playAgain.equalsIgnoreCase("yes")){
-								System.out.println(" CONTINUE WITH NEXT ROUND");
-
-
-							}else {System.out.println(" CHECK YOUR HISTORY");
-								break;
-
-							   	}
-
-
+			playAgain=JOptionPane.showInputDialog(null,"This is the end of the game. Would you like to play the game again?");
+			if(playAgain.equalsIgnoreCase("yes")){
+				System.out.println("Please continue with the next game");
+			}
+			else{
+				System.out.println("Please see below your game history");
+			break;
+			}
 		} //close while loop
-
-
-	M.displayFullHistory();
-
-
-	i++;
-
+		M.displayFullHistory();
+		M.session(i);
+		i++;
 	}
 
 

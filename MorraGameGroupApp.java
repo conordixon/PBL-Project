@@ -30,22 +30,20 @@ public class MorraGameGroupApp{
 	MorraGameGroup myMorraT= new MorraGameGroup();
 
 
-		while(i<1){
-
+		while(i<3){
 			M.session(i);
-            i++;
+			M.displayFullHistory();      
 			playAgain=JOptionPane.showInputDialog(null,"This is the end of the game. Would you like to play the game again?");
 			if(playAgain.equalsIgnoreCase("yes")){
 				System.out.println("Please continue with the next game");
+				i++;
+				M.displayFullHistory();
 			}
 			else{
-				System.out.println("Please see below your game history");
+				System.out.println("Please see above your game history");
 			break;
 			}
 		} //close while loop
-		M.displayFullHistory();
-		M.session(i);
-		i++;
 	}
 
 

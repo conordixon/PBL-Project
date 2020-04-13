@@ -50,7 +50,6 @@ public class MorraGameGroup{
 		strChoice="";
 		playerScore=0;
 		computerScore=0;
-
 	 }
 
 
@@ -145,7 +144,7 @@ public class MorraGameGroup{
 			winner= "COMPUTER";
 		}
 		else{ 
-			winner="GAME IS A DRAW";}
+			winner="NO WINNER DRAWN GAME";}
 		return winner;
 	 }
 
@@ -157,7 +156,7 @@ public class MorraGameGroup{
 				this.setRandomNo();
 			choiceEvenOrOdd=Integer.parseInt(JOptionPane.showInputDialog(null,"Choose 1 for odd or 0 for even" ));
 			System.out.println("You have chosen "+(this.getPlayerNo())+" fingers");
-			System.out.println("You have chosen "+(this.getChoiceStr())+" as Input");
+			System.out.println("You have chosen "+(this.getChoiceStr())+" team choice");
 
 			//Display the computer choice
 			System.out.println("Computer has chosen "+(this.getRandomNo())+" fingers");
@@ -215,7 +214,7 @@ public class MorraGameGroup{
 
 			System.out.println();
 			System.out.println("******Printing History*****");
-			System.out.println("Game "+(j+1));
+			System.out.println("Games "+(j+1));
 
 			System.out.println("Player Number: ");
 
@@ -254,7 +253,7 @@ public class MorraGameGroup{
 
 	public void session(int i) {
 			//Creates an object for each game
-			Marray.add(i,new MorraGameGroup());
+			Marray.add(new MorraGameGroup());
 
 		do{
 			//Function that asks user for number and choice and sets the computer number
@@ -277,12 +276,11 @@ public class MorraGameGroup{
 
 			//Adding data to history array
 			playerChoiceArr.add(Marray.get(i).getPlayerNo());
-			computerChoiceArr.add(Marray.get(i).getRandomNo() );
+			computerChoiceArr.add(Marray.get(i).getRandomNo());
 			strPlayerChoiceArr.add(Marray.get(i).getChoiceStr());
-			arrayResult.add(Marray.get(i).getResultStr() );
+			arrayResult.add(Marray.get(i).getResultStr());
 			playerScoreArr.add(Marray.get(i).getPlayerScore());
 			computerScoreArr.add(Marray.get(i).getComputerScore());
-			//winnerArr.add( Marray.get(i).getWinner());
 
 		} //close do while loop
 
@@ -290,9 +288,8 @@ public class MorraGameGroup{
 		while (((Marray.get(i)).getPlayerScore()<12) & ((Marray.get(i)).getComputerScore()<12));
 
 			System.out.println( "The winner of this game is "+(Marray.get(i)).determineWinner());
-			// JOptionPane.showMessageDialog(null, "The winner of the game is " +(Marray.get(i)).determineWinner());
 			ImageIcon winner=new ImageIcon("winner.png");
-			JOptionPane.showMessageDialog(null, "The winner of the game is the " +( Marray.get(i)).determineWinner(),"Display Image", JOptionPane.INFORMATION_MESSAGE,winner);
+			JOptionPane.showMessageDialog(null, "The winner of the game is " +(Marray.get(i)).determineWinner(),"Display Image", JOptionPane.INFORMATION_MESSAGE,winner);
 			winnerArr.add(Marray.get(i).getWinner());
             System.out.println();//empty line for better appearance
 		}

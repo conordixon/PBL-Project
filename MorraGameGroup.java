@@ -163,8 +163,8 @@ public class MorraGameGroup{
 			System.out.println("Computer has chosen "+(this.getRandomNo())+" fingers");
 			}
 			else{
-				ImageIcon attention=new ImageIcon("attention.png");
-				JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.", "Display Image", JOptionPane.INFORMATION_MESSAGE,attention);
+				ImageIcon turnback=new ImageIcon("turnback.png");
+				JOptionPane.showMessageDialog(null, "This is an invalid value, please start again.", "Display Image", JOptionPane.INFORMATION_MESSAGE,turnback);
 				generateInputs();
 		}
 	}

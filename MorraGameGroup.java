@@ -55,14 +55,13 @@ public class MorraGameGroup{
 
 
     //override Constructor
-	public MorraGameGroup(int playerNo, int choiceEvenOrOdd) {
-
+	public MorraGameGroup(int playerNo, int choiceEvenOrOdd){
 		this.playerNo=playerNo;
 		this.choiceEvenOrOdd=choiceEvenOrOdd;
 	}
 	//set random number for computer
 	public void setRandomNo(){
-			this.randomNo=((int)(Math.random()*10)+1);  //number between 1 and 10
+		this.randomNo=((int)(Math.random()*10)+1);  //number between 1 and 10
 	}
 
 	//set players random number
@@ -77,7 +76,7 @@ public class MorraGameGroup{
 
 	 //get player score
     public int getPlayerScore(){
-			return playerScore;
+		return playerScore;
     }
 
 	//get computers number
@@ -86,32 +85,32 @@ public class MorraGameGroup{
 	}
 
 	//set players random number
-		public int getPlayerNo(){
-			return playerNo;
+	public int getPlayerNo(){
+		return playerNo;
 	}
 
     //get computer score
-     public int getComputerScore(){
-			return computerScore;
+    public int getComputerScore(){
+		return computerScore;
     }
 
-	 public String getStrChoice(){
-			return strChoice;
+	public String getStrChoice(){
+		return strChoice;
     }
 
-	 public String getStrResult(){
-			return strResult;
+	public String getStrResult(){
+		return strResult;
     }
 	public  String getWinner(){
-			return winner;
+		return winner;
 	}
 
 	public void setCount(int count){
-			this.ocount=count;
+		this.ocount=count;
 	}
 
 	public int getCount(){
-			return ocount;
+		return ocount;
 	}
 
  //get the players choice odd or even
